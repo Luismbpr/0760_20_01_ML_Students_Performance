@@ -6,6 +6,8 @@
 venv_0760_20_01_312_001 copy.txt
 venv_0760_20_01_312_001.txt
 
+**/notebooks/project_001_001.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
