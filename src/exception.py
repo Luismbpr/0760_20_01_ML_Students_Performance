@@ -24,6 +24,10 @@ def error_message_details(error, error_detail:sys):
 
 class CustomException(Exception):
     def __init__(self, error_message, error_detail:sys):
+        """
+        from src.exception import CustomException
+        CustomException(Exception)
+        """
         super.__init__(error_message)
         self.error_message = error_message_details(error=error_message, error_detail=error_detail)
     
