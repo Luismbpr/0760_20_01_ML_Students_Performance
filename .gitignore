@@ -8,6 +8,10 @@ venv_0760_20_01_312_001.txt
 
 **/notebooks/project_001_001.ipynb
 
+**/original_files/
+*/original_files/
+/original_files/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
