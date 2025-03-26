@@ -10,6 +10,9 @@ from sklearn.model_selection import train_test_split
 from src.exception import CustomException
 from src.logger import logging
 
+import requests
+from urllib.request import urlretrieve
+
 ## utils - Have all the necessary classes and functions that help
 ### Create the following functions: Save and Load object, Evaluate models
 
@@ -80,5 +83,40 @@ def evaluate_models(X_train, X_test, y_train, y_test, models, param):
     try:
         pass
     
+    except Exception as e:
+        raise CustomException(e, sys)
+    
+
+def download_data_github(url:str,path_to_save:str, filename_tosave:str):
+    """
+    ```
+    def download_data_github(url:str,path_to_save:str,is_repo_private:bool=False):
+    If repository is private need to add
+    import requests
+    from requests.structures import CaseInsensitiveDict
+    headers = CaseInsensitiveDict()
+    headers['Authorization'] = "Add private token here"
+    resp = requests.get(url, headers=headers)
+    print(resp.status_code)
+    ```
+
+    from src.utils import download_data_github
+    download_data_github(url=,path_to_save=)
+    """
+    try:
+        #pass
+        ## Create directories if they do not exist
+        #logging.info(f"src/utils/download_data_github")
+        if not os.path.exists(path_to_save):
+        #if not os.path.isdir(path_to_save):
+            os.makedirs(path_to_save, exist_ok=True)
+        
+        ### Get content from website and save it
+        resp = requests.get(url)
+        with open(os.path.join(path_to_save,filename_tosave), 'wb') as file:
+            print("Writing contents in file")
+            file.write(resp.content)
+        #logging.info(f"Downloaded data from Github successfully")
+
     except Exception as e:
         raise CustomException(e, sys)
