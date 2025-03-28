@@ -10,4 +10,4 @@ statsmodels
 ipykernel
 requests
 dotenv
--e .
+#-e .
